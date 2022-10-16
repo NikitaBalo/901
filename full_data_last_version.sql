@@ -1,478 +1,116 @@
-#
-# TABLE STRUCTURE FOR: Comments_Reviews
-#
+DROP DATABASE IF EXISTS `nikitabd`;
+CREATE DATABASE `nikitabd`;
+USE `nikitabd`;
 
-DROP TABLE IF EXISTS `Comments_Reviews`;
+DROP TABLE IF EXISTS `Users`;
 
-CREATE TABLE `Comments_Reviews` (
-  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
-  `comment_message` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `rate` tinyint(4) NOT NULL,
-  `id_review` int(11) NOT NULL,
-  PRIMARY KEY (`id_comment`),
-  KEY `fk_Comments_Reviews_Reviews2_idx` (`id_review`),
-  CONSTRAINT `fk_Comments_Reviews_Reviews2` FOREIGN KEY (`id_review`) REFERENCES `Reviews` (`id_review`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `Users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (1, 'Et illo ut ullam ut earum esse ut perferendis', 7, 1);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (2, 'Aut doloremque eum eveniet sint facere dolore', 10, 2);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (3, 'Est saepe harum consequatur deleniti optio. C', 0, 3);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (4, 'Quia ut quis provident. Ullam a consectetur i', 10, 4);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (5, 'Et dolore aut vero. Ut nesciunt qui in suscip', 5, 5);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (6, 'Sit ullam repellendus nam nihil optio in quas', 0, 6);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (7, 'Nemo numquam voluptas numquam architecto. Qui', 1, 7);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (8, 'Sunt ipsa eaque nihil fugit expedita deleniti', 10, 8);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (9, 'Enim iusto sunt expedita aliquam eveniet. Et ', 2, 9);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (10, 'Quis et corporis accusantium quidem quis quo ', 4, 10);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (11, 'Eius aliquam aspernatur dolore nam harum reru', 10, 11);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (12, 'Magnam eum sit sed temporibus rem dignissimos', 9, 12);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (13, 'Dignissimos iste dolore eos enim fuga officii', 2, 13);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (14, 'Nesciunt dolor dolor laudantium qui. Non qui ', 4, 14);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (15, 'Sed ea quod harum occaecati rerum. Distinctio', 9, 15);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (16, 'Exercitationem alias aut explicabo voluptate ', 3, 16);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (17, 'Dolorem consectetur enim aliquid necessitatib', 2, 17);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (18, 'Aperiam itaque nobis architecto quis dolores.', 7, 18);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (19, 'Sint nulla sit et. Molestias aspernatur ab ei', 1, 19);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (20, 'Nam modi aperiam et dolorem inventore placeat', 7, 20);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (21, 'Possimus totam consequatur et sit fugiat. Nes', 3, 21);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (22, 'Minus eius ducimus in ut harum harum. Tempori', 0, 22);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (23, 'Ut quo cumque voluptas ut. Placeat dolorem at', 10, 23);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (24, 'Deleniti et rerum repellat nam. Mollitia quid', 7, 24);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (25, 'Deserunt id iusto soluta odio. Optio maxime d', 0, 25);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (26, 'At optio cumque autem est suscipit quibusdam.', 2, 26);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (27, 'Et aliquam earum nostrum est voluptate. Maior', 6, 27);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (28, 'Et esse eos qui ad fugiat dolore. Provident c', 4, 28);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (29, 'Qui tempora qui tenetur numquam. Occaecati ma', 3, 29);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (30, 'Qui et ut impedit. Quos in eligendi quae tota', 8, 30);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (31, 'Repudiandae possimus sed pariatur corporis co', 4, 31);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (32, 'Enim totam qui iste quod perspiciatis ut magn', 6, 32);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (33, 'Accusamus tenetur placeat magnam consectetur ', 0, 33);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (34, 'Sed officiis eligendi cupiditate eligendi ill', 1, 34);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (35, 'Tempora praesentium ducimus voluptas hic dese', 6, 35);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (36, 'Excepturi autem saepe harum. Quo nostrum dolo', 6, 36);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (37, 'Dolores ea non dolores id provident consectet', 0, 37);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (38, 'Aut ipsam quia maxime et qui. Ducimus enim et', 3, 38);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (39, 'Ea dolorum mollitia similique aut odit ut et ', 10, 39);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (40, 'Soluta et numquam sit eaque. Sed velit incidu', 6, 40);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (41, 'Aliquam incidunt sequi quisquam nihil aliquam', 8, 41);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (42, 'Libero sint architecto error iste voluptatem ', 1, 42);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (43, 'Est aliquam voluptatem omnis mollitia harum o', 0, 43);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (44, 'Veritatis ratione ipsam est fuga. Temporibus ', 8, 44);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (45, 'Soluta facilis qui quibusdam velit omnis dolo', 9, 45);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (46, 'Ut nobis animi occaecati cumque quia facilis ', 7, 46);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (47, 'Illum autem molestiae quas harum labore neque', 6, 47);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (48, 'Perferendis facere vero est alias. Incidunt a', 4, 48);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (49, 'Sapiente rerum facilis exercitationem quaerat', 4, 49);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (50, 'Adipisci sint aliquam aut voluptatibus eos vo', 0, 50);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (51, 'Voluptatum ut id accusamus dicta. Ut labore r', 7, 51);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (52, 'Praesentium eum debitis inventore sed natus i', 3, 52);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (53, 'Sequi non dignissimos cum eum excepturi. Comm', 1, 53);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (54, 'Saepe debitis saepe non sunt repudiandae nequ', 7, 54);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (55, 'Fugiat vel totam aliquam. Et est consectetur ', 10, 55);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (56, 'Aut delectus amet odit sed. Ea est quod sunt ', 0, 56);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (57, 'Culpa dolorum sequi exercitationem ad. Provid', 8, 57);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (58, 'Est alias eos dolor et qui id accusantium. Vo', 3, 58);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (59, 'Ea tenetur minima cum voluptatem esse incidun', 6, 59);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (60, 'Facere consequatur iste necessitatibus et. Qu', 7, 60);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (61, 'Debitis aperiam officiis delectus nemo. Corru', 10, 61);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (62, 'Ullam quidem incidunt itaque facilis nemo ut ', 7, 62);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (63, 'Magnam nesciunt debitis vel consequatur. Ad q', 7, 63);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (64, 'Necessitatibus excepturi eveniet consequatur ', 5, 64);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (65, 'Et veniam voluptatem eligendi voluptate. Elig', 8, 65);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (66, 'Et cupiditate in eaque voluptate. Nemo debiti', 8, 66);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (67, 'Sunt corrupti quod voluptas aut. Velit magni ', 10, 67);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (68, 'Quidem qui similique facilis. Rerum repellend', 4, 68);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (69, 'Laboriosam voluptatem quam quod accusamus sae', 1, 69);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (70, 'Sed velit nulla eligendi velit non. Quibusdam', 10, 70);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (71, 'Blanditiis commodi enim architecto. Velit mol', 1, 71);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (72, 'Sit consequatur expedita illo. Veniam dolorib', 1, 72);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (73, 'Quia sunt sed doloremque quos sed. Molestiae ', 10, 73);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (74, 'Delectus explicabo ducimus ullam voluptatem t', 5, 74);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (75, 'Culpa molestiae ut velit enim. Molestias hic ', 6, 75);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (76, 'Modi ut dolor sit nemo. Ut quo optio odio imp', 5, 76);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (77, 'Velit aut sed voluptatum in. Eius quia incidu', 5, 77);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (78, 'Animi voluptatum explicabo ut voluptatem. Ali', 7, 78);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (79, 'Quo ut quo et architecto itaque expedita vel.', 9, 79);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (80, 'Excepturi quaerat omnis aut quisquam. Omnis o', 3, 80);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (81, 'Et omnis placeat nisi delectus fuga. Magni ut', 8, 81);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (82, 'Dolorem et velit ipsam aliquid necessitatibus', 1, 82);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (83, 'Sed molestiae numquam sapiente accusantium. E', 9, 83);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (84, 'Autem praesentium rerum dolor molestiae sed f', 10, 84);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (85, 'Dolorem eum quis qui vero delectus. Assumenda', 6, 85);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (86, 'Aut sit modi et illum. Et non ea accusantium ', 3, 86);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (87, 'Incidunt possimus qui incidunt modi. Non nisi', 8, 87);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (88, 'Est debitis non aperiam. Eum vel vel iusto of', 4, 88);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (89, 'Perferendis dignissimos sunt excepturi eos il', 2, 89);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (90, 'In est voluptate officiis in. Voluptatem volu', 3, 90);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (91, 'Magni eius suscipit minima rem. Qui qui omnis', 3, 91);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (92, 'Accusantium eaque natus saepe accusamus dolor', 4, 92);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (93, 'Quis quasi natus laborum asperiores aut nobis', 1, 93);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (94, 'Enim optio et rerum sint. Rem possimus iusto ', 8, 94);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (95, 'Maxime nisi id dolor modi. Cupiditate necessi', 6, 95);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (96, 'Facilis consequatur illum nobis facilis et. E', 5, 96);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (97, 'Voluptas necessitatibus officiis consectetur ', 8, 97);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (98, 'Sit aut enim quia exercitationem provident et', 8, 98);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (99, 'Et ipsa repellendus blanditiis perferendis vo', 9, 99);
-INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (100, 'Sit eaque illo ipsam ut magni. Molestiae quae', 3, 100);
-
-
-#
-# TABLE STRUCTURE FOR: Favorite_statuses
-#
-
-DROP TABLE IF EXISTS `Favorite_statuses`;
-
-CREATE TABLE `Favorite_statuses` (
-  `status_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (1, 'eius');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (2, 'distinctio');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (3, 'suscipit');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (4, 'nostrum');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (5, 'nihil');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (6, 'voluptates');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (7, 'soluta');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (8, 'sed');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (9, 'blanditiis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (10, 'nesciunt');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (11, 'ipsam');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (12, 'maxime');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (13, 'nihil');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (14, 'aliquam');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (15, 'nemo');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (16, 'provident');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (17, 'autem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (18, 'doloremque');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (19, 'quos');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (20, 'accusantium');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (21, 'animi');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (22, 'atque');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (23, 'eum');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (24, 'quod');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (25, 'ut');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (26, 'ullam');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (27, 'et');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (28, 'qui');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (29, 'doloremque');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (30, 'impedit');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (31, 'ex');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (32, 'occaecati');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (33, 'natus');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (34, 'expedita');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (35, 'cumque');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (36, 'ut');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (37, 'et');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (38, 'ab');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (39, 'dolores');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (40, 'pariatur');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (41, 'dolore');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (42, 'dolor');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (43, 'quod');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (44, 'voluptas');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (45, 'quia');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (46, 'distinctio');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (47, 'accusantium');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (48, 'optio');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (49, 'autem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (50, 'ut');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (51, 'dolorem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (52, 'necessitatibus');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (53, 'incidunt');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (54, 'labore');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (55, 'ducimus');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (56, 'qui');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (57, 'voluptatem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (58, 'iste');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (59, 'voluptatem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (60, 'nobis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (61, 'consectetur');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (62, 'non');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (63, 'deserunt');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (64, 'animi');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (65, 'debitis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (66, 'odit');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (67, 'error');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (68, 'et');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (69, 'aut');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (70, 'facilis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (71, 'iure');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (72, 'fugit');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (73, 'tempore');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (74, 'vel');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (75, 'optio');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (76, 'a');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (77, 'aut');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (78, 'dolore');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (79, 'autem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (80, 'magnam');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (81, 'dolorem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (82, 'reiciendis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (83, 'in');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (84, 'dolorem');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (85, 'dicta');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (86, 'hic');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (87, 'nam');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (88, 'et');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (89, 'eos');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (90, 'eum');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (91, 'consequatur');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (92, 'reiciendis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (93, 'veritatis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (94, 'neque');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (95, 'velit');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (96, 'sint');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (97, 'quas');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (98, 'omnis');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (99, 'sequi');
-INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (100, 'voluptates');
-
-
-#
-# TABLE STRUCTURE FOR: Favourite_groups
-#
-
-DROP TABLE IF EXISTS `Favourite_groups`;
-
-CREATE TABLE `Favourite_groups` (
-  `fav_gropu_id` int(11) NOT NULL,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`fav_gropu_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (1, 'sint');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (2, 'sunt');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (3, 'alias');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (4, 'modi');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (5, 'reiciendis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (6, 'error');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (7, 'odit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (8, 'impedit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (9, 'voluptatem');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (10, 'vel');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (11, 'et');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (12, 'libero');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (13, 'ratione');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (14, 'doloremque');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (15, 'sapiente');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (16, 'nulla');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (17, 'nostrum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (18, 'architecto');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (19, 'molestiae');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (20, 'soluta');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (21, 'ad');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (22, 'non');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (23, 'aut');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (24, 'aliquid');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (25, 'ut');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (26, 'doloribus');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (27, 'voluptates');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (28, 'pariatur');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (29, 'soluta');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (30, 'quis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (31, 'sit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (32, 'adipisci');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (33, 'culpa');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (34, 'assumenda');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (35, 'sed');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (36, 'sint');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (37, 'rerum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (38, 'quia');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (39, 'incidunt');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (40, 'labore');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (41, 'ipsam');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (42, 'aut');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (43, 'eos');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (44, 'sapiente');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (45, 'debitis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (46, 'ea');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (47, 'et');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (48, 'eum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (49, 'fuga');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (50, 'at');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (51, 'quas');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (52, 'delectus');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (53, 'ipsum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (54, 'harum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (55, 'in');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (56, 'eum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (57, 'voluptatem');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (58, 'consequatur');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (59, 'impedit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (60, 'magni');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (61, 'quia');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (62, 'quisquam');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (63, 'enim');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (64, 'ea');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (65, 'quas');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (66, 'et');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (67, 'vel');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (68, 'officia');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (69, 'quae');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (70, 'recusandae');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (71, 'est');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (72, 'sapiente');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (73, 'earum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (74, 'autem');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (75, 'at');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (76, 'repudiandae');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (77, 'maxime');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (78, 'accusantium');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (79, 'at');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (80, 'quis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (81, 'placeat');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (82, 'quisquam');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (83, 'nobis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (84, 'et');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (85, 'pariatur');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (86, 'voluptas');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (87, 'harum');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (88, 'eaque');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (89, 'velit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (90, 'necessitatibus');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (91, 'ullam');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (92, 'perspiciatis');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (93, 'fugit');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (94, 'enim');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (95, 'sequi');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (96, 'numquam');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (97, 'odio');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (98, 'quas');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (99, 'officia');
-INSERT INTO `Favourite_groups` (`fav_gropu_id`, `name`) VALUES (100, 'ut');
-
-
-#
-# TABLE STRUCTURE FOR: Favourites
-#
-
-DROP TABLE IF EXISTS `Favourites`;
-
-CREATE TABLE `Favourites` (
-  `fav_id` int(11) NOT NULL AUTO_INCREMENT,
-  `fav_group_id` int(11) NOT NULL,
-  `status_id` int(11) NOT NULL,
-  `id_movie` int(11) NOT NULL,
-  `Users_id` int(11) NOT NULL,
-  PRIMARY KEY (`fav_id`,`fav_group_id`,`status_id`,`id_movie`),
-  KEY `fk_Favourites_Favourite_groups1_idx` (`fav_group_id`),
-  KEY `fk_Favourites_Favorite_statuses1_idx` (`status_id`),
-  KEY `fk_Favourites_Movies1_idx` (`id_movie`),
-  KEY `fk_Favourites_Users2_idx` (`Users_id`),
-  CONSTRAINT `fk_Favourites_Favorite_statuses1` FOREIGN KEY (`status_id`) REFERENCES `Favorite_statuses` (`status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Favourites_Favourite_groups1` FOREIGN KEY (`fav_group_id`) REFERENCES `Favourite_groups` (`fav_gropu_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Favourites_Movies1` FOREIGN KEY (`id_movie`) REFERENCES `Movies` (`id_movie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Favourites_Users2` FOREIGN KEY (`Users_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (34, 41, 59, 36, 2);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (46, 27, 84, 89, 3);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (22, 11, 56, 83, 4);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (79, 83, 24, 2, 5);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (98, 2, 78, 26, 5);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (66, 61, 76, 59, 7);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (31, 41, 51, 95, 10);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (3, 71, 21, 22, 11);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (87, 81, 71, 89, 13);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (94, 33, 50, 77, 13);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (51, 17, 5, 95, 16);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (43, 43, 62, 72, 17);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (21, 77, 88, 41, 18);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (65, 1, 19, 39, 21);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (72, 23, 10, 5, 23);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (23, 18, 14, 61, 24);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (71, 70, 87, 99, 26);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (74, 19, 3, 94, 26);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (88, 77, 17, 73, 26);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (18, 77, 20, 94, 27);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (28, 52, 89, 58, 28);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (9, 76, 46, 36, 29);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (75, 14, 45, 23, 29);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (100, 41, 38, 30, 30);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (10, 61, 30, 9, 32);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (11, 51, 31, 42, 35);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (38, 95, 26, 60, 35);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (44, 100, 94, 66, 35);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (61, 78, 16, 40, 36);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (58, 21, 42, 38, 38);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (32, 23, 100, 81, 42);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (70, 20, 57, 41, 43);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (99, 42, 58, 96, 43);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (59, 47, 32, 54, 45);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (90, 62, 87, 48, 48);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (36, 75, 38, 22, 50);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (84, 89, 38, 52, 51);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (33, 16, 14, 37, 52);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (60, 92, 4, 3, 53);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (56, 35, 44, 90, 54);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (62, 18, 31, 29, 54);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (6, 99, 33, 75, 55);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (8, 64, 45, 26, 55);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (45, 61, 2, 24, 55);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (49, 20, 80, 76, 56);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (15, 93, 62, 32, 57);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (63, 23, 13, 47, 57);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (52, 99, 60, 51, 59);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (57, 24, 65, 9, 60);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (80, 33, 7, 28, 60);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (89, 88, 20, 94, 61);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (13, 63, 9, 50, 62);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (17, 2, 47, 11, 63);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (14, 41, 24, 16, 65);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (7, 25, 70, 47, 67);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (19, 50, 36, 62, 67);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (76, 99, 73, 22, 68);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (81, 50, 72, 48, 68);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (40, 54, 25, 41, 70);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (96, 82, 98, 22, 70);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (24, 70, 73, 6, 71);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (30, 54, 28, 90, 71);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (4, 85, 88, 40, 72);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (12, 18, 82, 7, 72);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (78, 7, 96, 25, 76);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (42, 36, 56, 81, 78);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (50, 36, 56, 34, 78);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (5, 55, 81, 2, 79);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (27, 62, 84, 51, 79);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (41, 39, 78, 21, 79);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (97, 18, 16, 31, 79);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (20, 17, 69, 38, 80);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (64, 57, 36, 11, 80);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (1, 91, 32, 21, 81);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (2, 53, 16, 95, 81);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (77, 63, 50, 56, 82);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (16, 7, 57, 12, 83);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (26, 36, 27, 22, 85);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (83, 86, 17, 16, 85);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (86, 3, 58, 69, 85);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (29, 76, 98, 46, 87);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (82, 74, 42, 94, 87);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (53, 62, 75, 14, 88);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (69, 70, 90, 28, 88);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (73, 28, 44, 44, 88);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (92, 1, 84, 43, 88);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (37, 36, 67, 36, 89);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (47, 37, 34, 2, 91);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (91, 3, 64, 32, 92);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (93, 90, 75, 81, 92);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (68, 16, 54, 50, 93);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (35, 43, 87, 81, 94);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (54, 58, 2, 91, 94);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (55, 36, 93, 84, 94);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (85, 87, 7, 33, 94);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (25, 19, 17, 34, 96);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (48, 58, 43, 60, 97);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (95, 20, 66, 25, 97);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (67, 7, 12, 51, 98);
-INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `status_id`, `id_movie`, `Users_id`) VALUES (39, 77, 54, 45, 99);
-
-
-#
-# TABLE STRUCTURE FOR: Genres
-#
-
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (1, 'toy.mya', '5ec5e3a01c4c4bdb41ee643ed6220e69');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (2, 'emante', '8c7310d842f89aa75e0f8f7e4e5dbcfb');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (3, 'qlindgren', 'ac172cd7b97397bccff8641e6f72aafb');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (4, 'kunze.kathryn', 'c1f041a3658f2e00078e9fc592ef462a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (5, 'howe.leonel', '0fca7799f1d9ef6a08cab7fb5815bc27');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (6, 'wilderman.dovie', '61c4d129d397f1dece31eca1fac84b2a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (7, 'urogahn', 'fb479c18436324f5beb3a6abc24abd0a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (8, 'marks.syble', '1e277130a4cc3418baaa9eb890bd1164');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (9, 'richard69', '8453a10bf8f676e3bae1c02bdfdd8c6e');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (10, 'fabian.keeling', '992788510d5b0195c70811b3a9158ee6');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (11, 'jorge53', '217a8d46f639c09f1eaa2bd3421ee410');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (12, 'allene.bradtke', '9379646d7857cf2810a37d14de4b5797');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (13, 'brandt30', 'c5b326b91f9b306ac31def02dea4291b');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (14, 'hammes.reba', '7b6e5c6f8528dbd1c64e9ddbc6125175');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (15, 'concepcion91', '3ba94dacfb38545bba4b2c01ad664623');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (16, 'felicia86', '72c6138851b42cb768ebdfe77f0d396e');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (17, 'major.murphy', 'aa6d6131014906f32119ae17c7d6464c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (18, 'parisian.kitty', '2d2260920b2b7c8ba3baa1f834390537');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (19, 'katarina.beer', 'd5a7509a9cbfc3dc248d432d9951f337');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (20, 'myles.koepp', '0391426adfeb217011618be8f7e166d6');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (21, 'cummerata.judge', '4301501752f77084b61fb67e967b161a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (22, 'pmann', '2300e11ec3d9157b00edb53787f3b9f9');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (23, 'keanu84', '631a610535f5798109f33374e4e89b51');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (24, 'gmitchell', '37235eace69bbdf5b2b4342c57c5b0ec');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (25, 'xfeeney', '558c655687c24c9c27dc07aeefddb998');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (26, 'agustina.kris', 'a05515407523402ca5a0a8dbf00acf8c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (27, 'antonia.haag', '0a696d7c35ec57bfc5705d7c87746fa1');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (28, 'ykonopelski', 'e89977683c75a477a1a5cc023bbdb119');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (29, 'kschroeder', '748d13a69aa441f980c62d1bf798f645');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (30, 'ari.gaylord', '35a9b5d89bb6138f3eea9573e616ac65');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (31, 'sammie81', '240df91f0c4dddbc96200fc8e21e18e2');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (32, 'felicia39', '782b46479d75e1e1d141bca91345a9e2');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (33, 'welch.karlee', 'e1764a061e3e56166a01d4af6a0f47ca');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (34, 'mmurphy', '57c0d6831d816898ceb8cc3bd83709d2');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (35, 'caitlyn.jast', '3e8974c1772758e11d15038c34590e36');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (36, 'nnikolaus', '290c13aa5072cb26e807149bfc27b0e1');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (37, 'mylene.labadie', 'f14db7883dcaf16eeead6b5f2b20f22d');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (38, 'bheller', 'd94435e2787ae381264dfc703952f1fe');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (39, 'flavie.swift', '450991e2ae56ceefa7e4e3413e608a2a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (40, 'andres20', '8fb9d89d6c1364cd823021fffd3259f3');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (41, 'nils.rempel', 'bd3eaab33199c71ee70b9b5b71730999');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (42, 'jjohnson', '1fe7939476315f978efbb1dd05a2baec');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (43, 'hattie51', 'd007370ed5489857dccd49140978c0a8');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (44, 'vlangworth', '66a27517daca901148e9b9da10e8f9f7');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (45, 'xkemmer', '68c1443d5e7a4e2a5f741b660e5f2308');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (46, 'nwisozk', 'de6ff7fd5887771bbe52cc3db1cf2f0b');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (47, 'rigoberto12', '1efff6cea3c75106f2e36b03eef713ff');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (48, 'edward03', '9b449300036306863d56dbcb1f507752');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (49, 'jettie26', 'd64360460ee2431dd80117f62f729661');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (50, 'hvandervort', 'bc437406a9616b1282edfe1994123037');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (51, 'fschmitt', 'fdba4566757002f58ea3b40298881c94');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (52, 'stehr.meagan', '3521ca875687ca98abbb7b3b77219d07');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (53, 'zdonnelly', '50dbfab602d524488f0e13fbbf5e5624');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (54, 'abbie49', '8c71c11287805fd5b9c0472ff78cb855');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (55, 'hfeil', 'de238dd2d8c25051fbe0f276f675799c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (56, 'sfritsch', '3033e45bc9e25492add17bc5c572c821');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (57, 'swift.julia', '8199e36f3e4c64fb5cf31db97dc7a1c9');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (58, 'hayden.reichel', 'f3963b45ad0f3080188021223af3b420');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (59, 'zweber', '6f8b87c91d5dbd22fcdc633253a2eea9');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (60, 'olson.lauriane', 'a99d2c68515685a3bd7f8116a21e89a6');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (61, 'frederique.watsica', '1863445368c843ca6faeda787e1d0896');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (62, 'carrie17', '4f6ee467059fd4165482837e49befae4');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (63, 'spencer.delfina', 'fc7dedd6e0ae7a1b27505ada4a114318');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (64, 'geovany.koelpin', 'c1a63409e0982dc9f707236cf7e31001');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (65, 'rickie72', 'af43f65ec6539763bd5ddb6344c390b2');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (66, 'kkohler', 'd4115184726fe0b16deaef6ef9362064');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (67, 'dcronin', '95ecf0ca5da108868688a6551c9b3eab');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (68, 'gregoria.abbott', '33984bbc84439d4d1009197c3bd2dded');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (69, 'edythe.osinski', '890cbefd7b4ced29d80fdb409990fedf');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (70, 'koelpin.lance', '3c6b2250652f4550dd25f396bac18e5a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (71, 'waters.andres', '05142414fd934c7f8f79e66d02ba761e');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (72, 'roderick89', '5ba0f890d28fca008171f922bb539dd3');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (73, 'rico10', '9dd80e3b81f556fbc9af676d66d0b541');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (74, 'mueller.wilhelm', '2455115fed00a8922190c426711b77c7');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (75, 'carli.kulas', 'd55b6b279d8dd029c9e2772a1f7dd284');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (76, 'elsie.rice', 'e57ed93ee7dea12ee5d5fd6852ae78b3');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (77, 'marco49', '804a9f5306025e4a407ca4b74df2f05a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (78, 'dahlia.heller', '919b2068e7b1c71903b949c4e109ab11');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (79, 'jkemmer', '79c7db99ef0edf06836406acb591b5a2');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (80, 'lmorissette', '742920bd34875c119a27c7ceab53d74a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (81, 'agnes.welch', 'bf1e03f614bb6d21d2e5f365aac7b29c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (82, 'kayli.gutkowski', '24ad335832bf5d068a23249e26e6b733');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (83, 'karley.ratke', '4904aef25414d3e23fb844aa42fbdc8c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (84, 'hank.prohaska', '9715c8f92a022cc1b91bf60173a3acfb');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (85, 'aurore77', '1b5b51eef2243f337c07e55ae3178119');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (86, 'xschuster', '82ea6a13d21d2ff27bc6e2054896b670');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (87, 'santino.satterfield', '54bc1a541a4b9832d9c790c081abf257');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (88, 'acole', 'b20ba01f348fd47cc7b5a4f37653af8e');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (89, 'ztrantow', '1dea7c13197a1f139e7e92a91eda4f9a');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (90, 'ernser.keon', '1c1d7cf063238da173ce68161bf60653');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (91, 'lottie51', 'fd8d94f5fdfe16bd2d1b45dde942be20');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (92, 'marvin.anderson', '14775c54cc43963b4ff074d709741ab0');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (93, 'uwilderman', '76bca6204822389bea6d9d0aa809274d');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (94, 'norma38', '6691c5fb8cf3798b7784262705568dd5');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (95, 'hhodkiewicz', '8b3e47c3fb93a9460d2fccbc65739b9c');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (96, 'eswift', '06a48b4e07c05dfc40a9baa9d2b3f723');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (97, 'smitham.jo', '6cdfbda7365ea1964526a1dff96c0282');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (98, 'claire77', '54abf09713413995b01e51ff6526be70');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (99, 'freddie.rippin', '659125e7679e72c162946601a3b913a4');
+INSERT INTO `Users` (`id`, `login`, `password`) VALUES (100, 'ekuvalis', '94e565638f75551805eaaa232b73404e');
 DROP TABLE IF EXISTS `Genres`;
 
 CREATE TABLE `Genres` (
@@ -582,12 +220,6 @@ INSERT INTO `Genres` (`id_genre`, `genre_name`, `description`) VALUES (97, 'dolo
 INSERT INTO `Genres` (`id_genre`, `genre_name`, `description`) VALUES (98, 'quia', 'Aspernatur laborum nihil dolores voluptate re');
 INSERT INTO `Genres` (`id_genre`, `genre_name`, `description`) VALUES (99, 'consectetur', 'Ut dolorem suscipit totam dolorem dolor adipi');
 INSERT INTO `Genres` (`id_genre`, `genre_name`, `description`) VALUES (100, 'dolores', 'Aut suscipit natus est rerum eum. Velit eos m');
-
-
-#
-# TABLE STRUCTURE FOR: Movies
-#
-
 DROP TABLE IF EXISTS `Movies`;
 
 CREATE TABLE `Movies` (
@@ -700,12 +332,6 @@ INSERT INTO `Movies` (`id_movie`, `description`, `duration`, `id_genre`) VALUES 
 INSERT INTO `Movies` (`id_movie`, `description`, `duration`, `id_genre`) VALUES (98, 'Nobis cum temporibus saepe. Dolorum soluta fa', '391', 40);
 INSERT INTO `Movies` (`id_movie`, `description`, `duration`, `id_genre`) VALUES (99, 'Nihil doloremque ipsa et. Quos aut ipsam esse', '386', 99);
 INSERT INTO `Movies` (`id_movie`, `description`, `duration`, `id_genre`) VALUES (100, 'Nesciunt voluptatibus aut quod repellat quia ', '245', 100);
-
-
-#
-# TABLE STRUCTURE FOR: Profile
-#
-
 DROP TABLE IF EXISTS `Profile`;
 
 CREATE TABLE `Profile` (
@@ -820,132 +446,6 @@ INSERT INTO `Profile` (`id_profile`, `id_user`, `fullname`, `email`, `phone_numb
 INSERT INTO `Profile` (`id_profile`, `id_user`, `fullname`, `email`, `phone_number`) VALUES (98, 100, 'Nathaniel Donnelly', 'tbeahan@example.com', '89705082562');
 INSERT INTO `Profile` (`id_profile`, `id_user`, `fullname`, `email`, `phone_number`) VALUES (99, 100, 'Norwood Ankunding', 'nicholaus.dickens@example.org', '89668029633');
 INSERT INTO `Profile` (`id_profile`, `id_user`, `fullname`, `email`, `phone_number`) VALUES (100, 26, 'Dr. Ari Weimann Jr.', 'nathanael.lebsack@example.org', '89066044775');
-
-
-#
-# TABLE STRUCTURE FOR: Recent_Actions
-#
-
-DROP TABLE IF EXISTS `Recent_Actions`;
-
-CREATE TABLE `Recent_Actions` (
-  `id_inf` int(11) NOT NULL AUTO_INCREMENT,
-  `time` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_movie` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id_inf`,`id_movie`),
-  KEY `fk_Recent_Actions_Movies1_idx` (`id_movie`),
-  KEY `fk_Recent_Actions_Users1_idx` (`user_id`),
-  CONSTRAINT `fk_Recent_Actions_Movies1` FOREIGN KEY (`id_movie`) REFERENCES `Movies` (`id_movie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Recent_Actions_Users1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (1, '15', 1, 83);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (2, '337', 2, 87);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (3, '292', 3, 34);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (4, '88', 4, 80);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (5, '410', 5, 71);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (6, '248', 6, 5);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (7, '288', 7, 83);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (8, '353', 8, 93);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (9, '285', 9, 15);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (10, '280', 10, 4);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (11, '369', 11, 51);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (12, '103', 12, 76);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (13, '120', 13, 91);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (14, '357', 14, 67);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (15, '269', 15, 93);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (16, '309', 16, 83);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (17, '183', 17, 33);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (18, '122', 18, 10);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (19, '272', 19, 42);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (20, '30', 20, 58);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (21, '360', 21, 81);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (22, '264', 22, 93);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (23, '53', 23, 15);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (24, '168', 24, 83);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (25, '272', 25, 78);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (26, '191', 26, 50);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (27, '14', 27, 21);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (28, '223', 28, 83);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (29, '287', 29, 81);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (30, '68', 30, 86);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (31, '126', 31, 36);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (32, '433', 32, 63);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (33, '161', 33, 73);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (34, '133', 34, 69);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (35, '429', 35, 42);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (36, '454', 36, 43);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (37, '168', 37, 73);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (38, '290', 38, 25);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (39, '441', 39, 36);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (40, '429', 40, 88);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (41, '262', 41, 29);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (42, '221', 42, 87);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (43, '104', 43, 64);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (44, '43', 44, 19);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (45, '141', 45, 53);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (46, '459', 46, 56);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (47, '26', 47, 2);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (48, '472', 48, 86);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (49, '245', 49, 66);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (50, '307', 50, 43);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (51, '224', 51, 44);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (52, '428', 52, 47);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (53, '106', 53, 36);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (54, '397', 54, 58);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (55, '305', 55, 29);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (56, '51', 56, 13);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (57, '196', 57, 7);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (58, '255', 58, 50);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (59, '250', 59, 95);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (60, '274', 60, 87);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (61, '22', 61, 35);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (62, '283', 62, 31);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (63, '430', 63, 50);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (64, '86', 64, 8);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (65, '54', 65, 99);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (66, '393', 66, 92);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (67, '233', 67, 51);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (68, '96', 68, 72);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (69, '363', 69, 16);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (70, '398', 70, 86);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (71, '466', 71, 60);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (72, '13', 72, 45);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (73, '373', 73, 72);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (74, '73', 74, 23);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (75, '256', 75, 64);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (76, '30', 76, 25);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (77, '65', 77, 79);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (78, '210', 78, 65);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (79, '262', 79, 10);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (80, '341', 80, 45);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (81, '330', 81, 8);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (82, '374', 82, 53);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (83, '343', 83, 91);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (84, '408', 84, 43);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (85, '271', 85, 10);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (86, '317', 86, 20);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (87, '11', 87, 56);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (88, '315', 88, 17);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (89, '310', 89, 69);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (90, '449', 90, 51);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (91, '368', 91, 4);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (92, '476', 92, 4);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (93, '358', 93, 82);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (94, '377', 94, 53);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (95, '449', 95, 11);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (96, '116', 96, 81);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (97, '193', 97, 44);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (98, '391', 98, 61);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (99, '163', 99, 52);
-INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (100, '415', 100, 60);
-
-
-#
-# TABLE STRUCTURE FOR: Reviews
-#
-
 DROP TABLE IF EXISTS `Reviews`;
 
 CREATE TABLE `Reviews` (
@@ -1061,12 +561,6 @@ INSERT INTO `Reviews` (`id_review`, `review_message`, `id_user`, `id_movie`, `us
 INSERT INTO `Reviews` (`id_review`, `review_message`, `id_user`, `id_movie`, `user_id`) VALUES (98, 'Mollitia beatae ratione molestiae. Qui assume', 0, 1, 80);
 INSERT INTO `Reviews` (`id_review`, `review_message`, `id_user`, `id_movie`, `user_id`) VALUES (99, 'Ut quod unde est est officia. Officiis sit ad', 0, 62, 100);
 INSERT INTO `Reviews` (`id_review`, `review_message`, `id_user`, `id_movie`, `user_id`) VALUES (100, 'Sit distinctio incidunt dolor. Unde quis ulla', 0, 66, 92);
-
-
-#
-# TABLE STRUCTURE FOR: Subscription
-#
-
 DROP TABLE IF EXISTS `Subscription`;
 
 CREATE TABLE `Subscription` (
@@ -1176,127 +670,6 @@ INSERT INTO `Subscription` (`id_subscription`, `date_of_activate`, `duration`) V
 INSERT INTO `Subscription` (`id_subscription`, `date_of_activate`, `duration`) VALUES (98, '2006-09-03', '30');
 INSERT INTO `Subscription` (`id_subscription`, `date_of_activate`, `duration`) VALUES (99, '2010-12-07', '30');
 INSERT INTO `Subscription` (`id_subscription`, `date_of_activate`, `duration`) VALUES (100, '2012-01-16', '120');
-
-
-#
-# TABLE STRUCTURE FOR: Users
-#
-
-DROP TABLE IF EXISTS `Users`;
-
-CREATE TABLE `Users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (1, 'toy.mya', '5ec5e3a01c4c4bdb41ee643ed6220e69');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (2, 'emante', '8c7310d842f89aa75e0f8f7e4e5dbcfb');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (3, 'qlindgren', 'ac172cd7b97397bccff8641e6f72aafb');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (4, 'kunze.kathryn', 'c1f041a3658f2e00078e9fc592ef462a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (5, 'howe.leonel', '0fca7799f1d9ef6a08cab7fb5815bc27');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (6, 'wilderman.dovie', '61c4d129d397f1dece31eca1fac84b2a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (7, 'urogahn', 'fb479c18436324f5beb3a6abc24abd0a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (8, 'marks.syble', '1e277130a4cc3418baaa9eb890bd1164');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (9, 'richard69', '8453a10bf8f676e3bae1c02bdfdd8c6e');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (10, 'fabian.keeling', '992788510d5b0195c70811b3a9158ee6');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (11, 'jorge53', '217a8d46f639c09f1eaa2bd3421ee410');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (12, 'allene.bradtke', '9379646d7857cf2810a37d14de4b5797');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (13, 'brandt30', 'c5b326b91f9b306ac31def02dea4291b');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (14, 'hammes.reba', '7b6e5c6f8528dbd1c64e9ddbc6125175');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (15, 'concepcion91', '3ba94dacfb38545bba4b2c01ad664623');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (16, 'felicia86', '72c6138851b42cb768ebdfe77f0d396e');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (17, 'major.murphy', 'aa6d6131014906f32119ae17c7d6464c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (18, 'parisian.kitty', '2d2260920b2b7c8ba3baa1f834390537');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (19, 'katarina.beer', 'd5a7509a9cbfc3dc248d432d9951f337');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (20, 'myles.koepp', '0391426adfeb217011618be8f7e166d6');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (21, 'cummerata.judge', '4301501752f77084b61fb67e967b161a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (22, 'pmann', '2300e11ec3d9157b00edb53787f3b9f9');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (23, 'keanu84', '631a610535f5798109f33374e4e89b51');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (24, 'gmitchell', '37235eace69bbdf5b2b4342c57c5b0ec');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (25, 'xfeeney', '558c655687c24c9c27dc07aeefddb998');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (26, 'agustina.kris', 'a05515407523402ca5a0a8dbf00acf8c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (27, 'antonia.haag', '0a696d7c35ec57bfc5705d7c87746fa1');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (28, 'ykonopelski', 'e89977683c75a477a1a5cc023bbdb119');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (29, 'kschroeder', '748d13a69aa441f980c62d1bf798f645');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (30, 'ari.gaylord', '35a9b5d89bb6138f3eea9573e616ac65');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (31, 'sammie81', '240df91f0c4dddbc96200fc8e21e18e2');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (32, 'felicia39', '782b46479d75e1e1d141bca91345a9e2');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (33, 'welch.karlee', 'e1764a061e3e56166a01d4af6a0f47ca');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (34, 'mmurphy', '57c0d6831d816898ceb8cc3bd83709d2');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (35, 'caitlyn.jast', '3e8974c1772758e11d15038c34590e36');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (36, 'nnikolaus', '290c13aa5072cb26e807149bfc27b0e1');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (37, 'mylene.labadie', 'f14db7883dcaf16eeead6b5f2b20f22d');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (38, 'bheller', 'd94435e2787ae381264dfc703952f1fe');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (39, 'flavie.swift', '450991e2ae56ceefa7e4e3413e608a2a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (40, 'andres20', '8fb9d89d6c1364cd823021fffd3259f3');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (41, 'nils.rempel', 'bd3eaab33199c71ee70b9b5b71730999');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (42, 'jjohnson', '1fe7939476315f978efbb1dd05a2baec');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (43, 'hattie51', 'd007370ed5489857dccd49140978c0a8');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (44, 'vlangworth', '66a27517daca901148e9b9da10e8f9f7');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (45, 'xkemmer', '68c1443d5e7a4e2a5f741b660e5f2308');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (46, 'nwisozk', 'de6ff7fd5887771bbe52cc3db1cf2f0b');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (47, 'rigoberto12', '1efff6cea3c75106f2e36b03eef713ff');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (48, 'edward03', '9b449300036306863d56dbcb1f507752');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (49, 'jettie26', 'd64360460ee2431dd80117f62f729661');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (50, 'hvandervort', 'bc437406a9616b1282edfe1994123037');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (51, 'fschmitt', 'fdba4566757002f58ea3b40298881c94');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (52, 'stehr.meagan', '3521ca875687ca98abbb7b3b77219d07');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (53, 'zdonnelly', '50dbfab602d524488f0e13fbbf5e5624');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (54, 'abbie49', '8c71c11287805fd5b9c0472ff78cb855');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (55, 'hfeil', 'de238dd2d8c25051fbe0f276f675799c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (56, 'sfritsch', '3033e45bc9e25492add17bc5c572c821');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (57, 'swift.julia', '8199e36f3e4c64fb5cf31db97dc7a1c9');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (58, 'hayden.reichel', 'f3963b45ad0f3080188021223af3b420');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (59, 'zweber', '6f8b87c91d5dbd22fcdc633253a2eea9');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (60, 'olson.lauriane', 'a99d2c68515685a3bd7f8116a21e89a6');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (61, 'frederique.watsica', '1863445368c843ca6faeda787e1d0896');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (62, 'carrie17', '4f6ee467059fd4165482837e49befae4');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (63, 'spencer.delfina', 'fc7dedd6e0ae7a1b27505ada4a114318');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (64, 'geovany.koelpin', 'c1a63409e0982dc9f707236cf7e31001');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (65, 'rickie72', 'af43f65ec6539763bd5ddb6344c390b2');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (66, 'kkohler', 'd4115184726fe0b16deaef6ef9362064');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (67, 'dcronin', '95ecf0ca5da108868688a6551c9b3eab');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (68, 'gregoria.abbott', '33984bbc84439d4d1009197c3bd2dded');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (69, 'edythe.osinski', '890cbefd7b4ced29d80fdb409990fedf');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (70, 'koelpin.lance', '3c6b2250652f4550dd25f396bac18e5a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (71, 'waters.andres', '05142414fd934c7f8f79e66d02ba761e');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (72, 'roderick89', '5ba0f890d28fca008171f922bb539dd3');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (73, 'rico10', '9dd80e3b81f556fbc9af676d66d0b541');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (74, 'mueller.wilhelm', '2455115fed00a8922190c426711b77c7');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (75, 'carli.kulas', 'd55b6b279d8dd029c9e2772a1f7dd284');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (76, 'elsie.rice', 'e57ed93ee7dea12ee5d5fd6852ae78b3');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (77, 'marco49', '804a9f5306025e4a407ca4b74df2f05a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (78, 'dahlia.heller', '919b2068e7b1c71903b949c4e109ab11');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (79, 'jkemmer', '79c7db99ef0edf06836406acb591b5a2');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (80, 'lmorissette', '742920bd34875c119a27c7ceab53d74a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (81, 'agnes.welch', 'bf1e03f614bb6d21d2e5f365aac7b29c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (82, 'kayli.gutkowski', '24ad335832bf5d068a23249e26e6b733');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (83, 'karley.ratke', '4904aef25414d3e23fb844aa42fbdc8c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (84, 'hank.prohaska', '9715c8f92a022cc1b91bf60173a3acfb');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (85, 'aurore77', '1b5b51eef2243f337c07e55ae3178119');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (86, 'xschuster', '82ea6a13d21d2ff27bc6e2054896b670');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (87, 'santino.satterfield', '54bc1a541a4b9832d9c790c081abf257');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (88, 'acole', 'b20ba01f348fd47cc7b5a4f37653af8e');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (89, 'ztrantow', '1dea7c13197a1f139e7e92a91eda4f9a');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (90, 'ernser.keon', '1c1d7cf063238da173ce68161bf60653');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (91, 'lottie51', 'fd8d94f5fdfe16bd2d1b45dde942be20');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (92, 'marvin.anderson', '14775c54cc43963b4ff074d709741ab0');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (93, 'uwilderman', '76bca6204822389bea6d9d0aa809274d');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (94, 'norma38', '6691c5fb8cf3798b7784262705568dd5');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (95, 'hhodkiewicz', '8b3e47c3fb93a9460d2fccbc65739b9c');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (96, 'eswift', '06a48b4e07c05dfc40a9baa9d2b3f723');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (97, 'smitham.jo', '6cdfbda7365ea1964526a1dff96c0282');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (98, 'claire77', '54abf09713413995b01e51ff6526be70');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (99, 'freddie.rippin', '659125e7679e72c162946601a3b913a4');
-INSERT INTO `Users` (`id`, `login`, `password`) VALUES (100, 'ekuvalis', '94e565638f75551805eaaa232b73404e');
-
-
-#
-# TABLE STRUCTURE FOR: Users_has_Subscription
-#
-
 DROP TABLE IF EXISTS `Users_has_Subscription`;
 
 CREATE TABLE `Users_has_Subscription` (
@@ -1409,5 +782,480 @@ INSERT INTO `Users_has_Subscription` (`user_id`, `subscription_id`) VALUES (97, 
 INSERT INTO `Users_has_Subscription` (`user_id`, `subscription_id`) VALUES (99, 68);
 INSERT INTO `Users_has_Subscription` (`user_id`, `subscription_id`) VALUES (100, 9);
 INSERT INTO `Users_has_Subscription` (`user_id`, `subscription_id`) VALUES (100, 37);
+DROP TABLE IF EXISTS `Recent_Actions`;
 
+CREATE TABLE `Recent_Actions` (
+  `id_inf` int(11) NOT NULL AUTO_INCREMENT,
+  `time` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_movie` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_inf`,`id_movie`,`user_id`),
+  KEY `fk_Recent_Actions_Movies1_idx` (`id_movie`),
+  KEY `fk_Recent_Actions_Users1_idx` (`user_id`),
+  CONSTRAINT `fk_Recent_Actions_Movies1` FOREIGN KEY (`id_movie`) REFERENCES `Movies` (`id_movie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Recent_Actions_Users1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (1, '15', 1, 83);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (2, '337', 2, 87);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (3, '292', 3, 34);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (4, '88', 4, 80);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (5, '410', 5, 71);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (6, '248', 6, 5);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (7, '288', 7, 83);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (8, '353', 8, 93);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (9, '285', 9, 15);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (10, '280', 10, 4);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (11, '369', 11, 51);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (12, '103', 12, 76);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (13, '120', 13, 91);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (14, '357', 14, 67);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (15, '269', 15, 93);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (16, '309', 16, 83);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (17, '183', 17, 33);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (18, '122', 18, 10);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (19, '272', 19, 42);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (20, '30', 20, 58);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (21, '360', 21, 81);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (22, '264', 22, 93);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (23, '53', 23, 15);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (24, '168', 24, 83);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (25, '272', 25, 78);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (26, '191', 26, 50);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (27, '14', 27, 21);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (28, '223', 28, 83);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (29, '287', 29, 81);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (30, '68', 30, 86);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (31, '126', 31, 36);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (32, '433', 32, 63);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (33, '161', 33, 73);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (34, '133', 34, 69);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (35, '429', 35, 42);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (36, '454', 36, 43);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (37, '168', 37, 73);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (38, '290', 38, 25);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (39, '441', 39, 36);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (40, '429', 40, 88);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (41, '262', 41, 29);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (42, '221', 42, 87);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (43, '104', 43, 64);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (44, '43', 44, 19);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (45, '141', 45, 53);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (46, '459', 46, 56);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (47, '26', 47, 2);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (48, '472', 48, 86);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (49, '245', 49, 66);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (50, '307', 50, 43);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (51, '224', 51, 44);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (52, '428', 52, 47);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (53, '106', 53, 36);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (54, '397', 54, 58);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (55, '305', 55, 29);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (56, '51', 56, 13);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (57, '196', 57, 7);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (58, '255', 58, 50);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (59, '250', 59, 95);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (60, '274', 60, 87);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (61, '22', 61, 35);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (62, '283', 62, 31);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (63, '430', 63, 50);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (64, '86', 64, 8);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (65, '54', 65, 99);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (66, '393', 66, 92);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (67, '233', 67, 51);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (68, '96', 68, 72);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (69, '363', 69, 16);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (70, '398', 70, 86);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (71, '466', 71, 60);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (72, '13', 72, 45);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (73, '373', 73, 72);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (74, '73', 74, 23);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (75, '256', 75, 64);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (76, '30', 76, 25);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (77, '65', 77, 79);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (78, '210', 78, 65);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (79, '262', 79, 10);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (80, '341', 80, 45);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (81, '330', 81, 8);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (82, '374', 82, 53);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (83, '343', 83, 91);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (84, '408', 84, 43);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (85, '271', 85, 10);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (86, '317', 86, 20);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (87, '11', 87, 56);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (88, '315', 88, 17);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (89, '310', 89, 69);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (90, '449', 90, 51);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (91, '368', 91, 4);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (92, '476', 92, 4);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (93, '358', 93, 82);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (94, '377', 94, 53);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (95, '449', 95, 11);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (96, '116', 96, 81);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (97, '193', 97, 44);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (98, '391', 98, 61);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (99, '163', 99, 52);
+INSERT INTO `Recent_Actions` (`id_inf`, `time`, `id_movie`, `user_id`) VALUES (100, '415', 100, 60);
+DROP TABLE IF EXISTS `Favorite_statuses`;
+
+CREATE TABLE `Favorite_statuses` (
+  `status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`status_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (1, 'open');
+INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (2, 'private');
+INSERT INTO `Favorite_statuses` (`status_id`, `name`) VALUES (3, 'URL only');
+DROP TABLE IF EXISTS `Comments_Reviews`;
+
+CREATE TABLE `Comments_Reviews` (
+  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_message` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rate` tinyint(4) NOT NULL,
+  `id_review` int(11) NOT NULL,
+  PRIMARY KEY (`id_comment`),
+  KEY `fk_Comments_Reviews_Reviews2_idx` (`id_review`),
+  CONSTRAINT `fk_Comments_Reviews_Reviews2` FOREIGN KEY (`id_review`) REFERENCES `Reviews` (`id_review`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (1, 'Et illo ut ullam ut earum esse ut perferendis', 7, 1);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (2, 'Aut doloremque eum eveniet sint facere dolore', 10, 2);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (3, 'Est saepe harum consequatur deleniti optio. C', 0, 3);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (4, 'Quia ut quis provident. Ullam a consectetur i', 10, 4);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (5, 'Et dolore aut vero. Ut nesciunt qui in suscip', 5, 5);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (6, 'Sit ullam repellendus nam nihil optio in quas', 0, 6);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (7, 'Nemo numquam voluptas numquam architecto. Qui', 1, 7);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (8, 'Sunt ipsa eaque nihil fugit expedita deleniti', 10, 8);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (9, 'Enim iusto sunt expedita aliquam eveniet. Et ', 2, 9);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (10, 'Quis et corporis accusantium quidem quis quo ', 4, 10);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (11, 'Eius aliquam aspernatur dolore nam harum reru', 10, 11);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (12, 'Magnam eum sit sed temporibus rem dignissimos', 9, 12);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (13, 'Dignissimos iste dolore eos enim fuga officii', 2, 13);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (14, 'Nesciunt dolor dolor laudantium qui. Non qui ', 4, 14);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (15, 'Sed ea quod harum occaecati rerum. Distinctio', 9, 15);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (16, 'Exercitationem alias aut explicabo voluptate ', 3, 16);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (17, 'Dolorem consectetur enim aliquid necessitatib', 2, 17);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (18, 'Aperiam itaque nobis architecto quis dolores.', 7, 18);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (19, 'Sint nulla sit et. Molestias aspernatur ab ei', 1, 19);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (20, 'Nam modi aperiam et dolorem inventore placeat', 7, 20);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (21, 'Possimus totam consequatur et sit fugiat. Nes', 3, 21);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (22, 'Minus eius ducimus in ut harum harum. Tempori', 0, 22);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (23, 'Ut quo cumque voluptas ut. Placeat dolorem at', 10, 23);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (24, 'Deleniti et rerum repellat nam. Mollitia quid', 7, 24);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (25, 'Deserunt id iusto soluta odio. Optio maxime d', 0, 25);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (26, 'At optio cumque autem est suscipit quibusdam.', 2, 26);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (27, 'Et aliquam earum nostrum est voluptate. Maior', 6, 27);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (28, 'Et esse eos qui ad fugiat dolore. Provident c', 4, 28);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (29, 'Qui tempora qui tenetur numquam. Occaecati ma', 3, 29);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (30, 'Qui et ut impedit. Quos in eligendi quae tota', 8, 30);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (31, 'Repudiandae possimus sed pariatur corporis co', 4, 31);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (32, 'Enim totam qui iste quod perspiciatis ut magn', 6, 32);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (33, 'Accusamus tenetur placeat magnam consectetur ', 0, 33);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (34, 'Sed officiis eligendi cupiditate eligendi ill', 1, 34);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (35, 'Tempora praesentium ducimus voluptas hic dese', 6, 35);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (36, 'Excepturi autem saepe harum. Quo nostrum dolo', 6, 36);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (37, 'Dolores ea non dolores id provident consectet', 0, 37);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (38, 'Aut ipsam quia maxime et qui. Ducimus enim et', 3, 38);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (39, 'Ea dolorum mollitia similique aut odit ut et ', 10, 39);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (40, 'Soluta et numquam sit eaque. Sed velit incidu', 6, 40);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (41, 'Aliquam incidunt sequi quisquam nihil aliquam', 8, 41);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (42, 'Libero sint architecto error iste voluptatem ', 1, 42);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (43, 'Est aliquam voluptatem omnis mollitia harum o', 0, 43);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (44, 'Veritatis ratione ipsam est fuga. Temporibus ', 8, 44);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (45, 'Soluta facilis qui quibusdam velit omnis dolo', 9, 45);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (46, 'Ut nobis animi occaecati cumque quia facilis ', 7, 46);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (47, 'Illum autem molestiae quas harum labore neque', 6, 47);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (48, 'Perferendis facere vero est alias. Incidunt a', 4, 48);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (49, 'Sapiente rerum facilis exercitationem quaerat', 4, 49);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (50, 'Adipisci sint aliquam aut voluptatibus eos vo', 0, 50);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (51, 'Voluptatum ut id accusamus dicta. Ut labore r', 7, 51);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (52, 'Praesentium eum debitis inventore sed natus i', 3, 52);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (53, 'Sequi non dignissimos cum eum excepturi. Comm', 1, 53);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (54, 'Saepe debitis saepe non sunt repudiandae nequ', 7, 54);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (55, 'Fugiat vel totam aliquam. Et est consectetur ', 10, 55);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (56, 'Aut delectus amet odit sed. Ea est quod sunt ', 0, 56);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (57, 'Culpa dolorum sequi exercitationem ad. Provid', 8, 57);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (58, 'Est alias eos dolor et qui id accusantium. Vo', 3, 58);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (59, 'Ea tenetur minima cum voluptatem esse incidun', 6, 59);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (60, 'Facere consequatur iste necessitatibus et. Qu', 7, 60);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (61, 'Debitis aperiam officiis delectus nemo. Corru', 10, 61);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (62, 'Ullam quidem incidunt itaque facilis nemo ut ', 7, 62);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (63, 'Magnam nesciunt debitis vel consequatur. Ad q', 7, 63);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (64, 'Necessitatibus excepturi eveniet consequatur ', 5, 64);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (65, 'Et veniam voluptatem eligendi voluptate. Elig', 8, 65);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (66, 'Et cupiditate in eaque voluptate. Nemo debiti', 8, 66);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (67, 'Sunt corrupti quod voluptas aut. Velit magni ', 10, 67);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (68, 'Quidem qui similique facilis. Rerum repellend', 4, 68);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (69, 'Laboriosam voluptatem quam quod accusamus sae', 1, 69);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (70, 'Sed velit nulla eligendi velit non. Quibusdam', 10, 70);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (71, 'Blanditiis commodi enim architecto. Velit mol', 1, 71);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (72, 'Sit consequatur expedita illo. Veniam dolorib', 1, 72);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (73, 'Quia sunt sed doloremque quos sed. Molestiae ', 10, 73);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (74, 'Delectus explicabo ducimus ullam voluptatem t', 5, 74);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (75, 'Culpa molestiae ut velit enim. Molestias hic ', 6, 75);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (76, 'Modi ut dolor sit nemo. Ut quo optio odio imp', 5, 76);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (77, 'Velit aut sed voluptatum in. Eius quia incidu', 5, 77);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (78, 'Animi voluptatum explicabo ut voluptatem. Ali', 7, 78);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (79, 'Quo ut quo et architecto itaque expedita vel.', 9, 79);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (80, 'Excepturi quaerat omnis aut quisquam. Omnis o', 3, 80);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (81, 'Et omnis placeat nisi delectus fuga. Magni ut', 8, 81);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (82, 'Dolorem et velit ipsam aliquid necessitatibus', 1, 82);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (83, 'Sed molestiae numquam sapiente accusantium. E', 9, 83);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (84, 'Autem praesentium rerum dolor molestiae sed f', 10, 84);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (85, 'Dolorem eum quis qui vero delectus. Assumenda', 6, 85);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (86, 'Aut sit modi et illum. Et non ea accusantium ', 3, 86);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (87, 'Incidunt possimus qui incidunt modi. Non nisi', 8, 87);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (88, 'Est debitis non aperiam. Eum vel vel iusto of', 4, 88);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (89, 'Perferendis dignissimos sunt excepturi eos il', 2, 89);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (90, 'In est voluptate officiis in. Voluptatem volu', 3, 90);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (91, 'Magni eius suscipit minima rem. Qui qui omnis', 3, 91);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (92, 'Accusantium eaque natus saepe accusamus dolor', 4, 92);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (93, 'Quis quasi natus laborum asperiores aut nobis', 1, 93);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (94, 'Enim optio et rerum sint. Rem possimus iusto ', 8, 94);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (95, 'Maxime nisi id dolor modi. Cupiditate necessi', 6, 95);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (96, 'Facilis consequatur illum nobis facilis et. E', 5, 96);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (97, 'Voluptas necessitatibus officiis consectetur ', 8, 97);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (98, 'Sit aut enim quia exercitationem provident et', 8, 98);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (99, 'Et ipsa repellendus blanditiis perferendis vo', 9, 99);
+INSERT INTO `Comments_Reviews` (`id_comment`, `comment_message`, `rate`, `id_review`) VALUES (100, 'Sit eaque illo ipsam ut magni. Molestiae quae', 3, 100);
+DROP TABLE IF EXISTS `Favourite_groups`;
+
+CREATE TABLE `Favourite_groups` (
+  `fav_gropu_id` int(11) NOT NULL,
+  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`fav_gropu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (1, 'sint');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (2, 'sunt');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (3, 'alias');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (4, 'modi');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (5, 'reiciendis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (6, 'error');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (7, 'odit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (8, 'impedit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (9, 'voluptatem');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (10, 'vel');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (11, 'et');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (12, 'libero');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (13, 'ratione');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (14, 'doloremque');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (15, 'sapiente');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (16, 'nulla');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (17, 'nostrum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (18, 'architecto');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (19, 'molestiae');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (20, 'soluta');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (21, 'ad');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (22, 'non');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (23, 'aut');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (24, 'aliquid');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (25, 'ut');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (26, 'doloribus');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (27, 'voluptates');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (28, 'pariatur');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (29, 'soluta');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (30, 'quis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (31, 'sit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (32, 'adipisci');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (33, 'culpa');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (34, 'assumenda');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (35, 'sed');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (36, 'sint');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (37, 'rerum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (38, 'quia');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (39, 'incidunt');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (40, 'labore');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (41, 'ipsam');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (42, 'aut');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (43, 'eos');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (44, 'sapiente');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (45, 'debitis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (46, 'ea');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (47, 'et');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (48, 'eum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (49, 'fuga');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (50, 'at');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (51, 'quas');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (52, 'delectus');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (53, 'ipsum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (54, 'harum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (55, 'in');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (56, 'eum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (57, 'voluptatem');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (58, 'consequatur');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (59, 'impedit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (60, 'magni');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (61, 'quia');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (62, 'quisquam');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (63, 'enim');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (64, 'ea');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (65, 'quas');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (66, 'et');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (67, 'vel');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (68, 'officia');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (69, 'quae');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (70, 'recusandae');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (71, 'est');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (72, 'sapiente');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (73, 'earum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (74, 'autem');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (75, 'at');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (76, 'repudiandae');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (77, 'maxime');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (78, 'accusantium');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (79, 'at');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (80, 'quis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (81, 'placeat');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (82, 'quisquam');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (83, 'nobis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (84, 'et');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (85, 'pariatur');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (86, 'voluptas');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (87, 'harum');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (88, 'eaque');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (89, 'velit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (90, 'necessitatibus');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (91, 'ullam');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (92, 'perspiciatis');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (93, 'fugit');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (94, 'enim');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (95, 'sequi');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (96, 'numquam');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (97, 'odio');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (98, 'quas');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (99, 'officia');
+INSERT INTO `Favourite_groups` (`fav_group_id`, `name`) VALUES (100, 'ut');
+DROP TABLE IF EXISTS `Favourites`;
+
+CREATE TABLE `Favourites` (
+  `fav_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fav_group_id` int(11) NOT NULL,
+  `id_movie` int(11) NOT NULL,
+  `Users_id` int(11) NOT NULL,
+  PRIMARY KEY (`fav_id`,`fav_group_id`,`id_movie`),
+  KEY `fk_Favourites_Favourite_groups1_idx` (`fav_group_id`),
+  KEY `fk_Favourites_Movies1_idx` (`id_movie`),
+  KEY `fk_Favourites_Users2_idx` (`Users_id`),
+  CONSTRAINT `fk_Favourites_Favourite_groups1` FOREIGN KEY (`fav_group_id`) REFERENCES `Favourite_groups` (`fav_gropu_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Favourites_Movies1` FOREIGN KEY (`id_movie`) REFERENCES `Movies` (`id_movie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Favourites_Users2` FOREIGN KEY (`Users_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (34, 41, 36, 2);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (46, 27, 89, 3);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (22, 11, 83, 4);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (79, 83, 2, 5);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (98, 2, 26, 5);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (66, 61, 59, 7);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (31, 41, 95, 10);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (3, 71, 22, 11);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (87, 81, 89, 13);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (94, 33, 77, 13);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (51, 17, 95, 16);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (43, 43, 72, 17);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (21, 77, 41, 18);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (65, 1, 39, 21);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (72, 23, 5, 23);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (23, 18, 61, 24);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (71, 70, 99, 26);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (74, 19, 94, 26);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (88, 77, 73, 26);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (18, 77, 94, 27);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (28, 52, 58, 28);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (9, 76, 36, 29);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (75, 14, 23, 29);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (100, 41, 30, 30);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (10, 61, 9, 32);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (11, 51, 42, 35);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (38, 95, 60, 35);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (44, 100, 66, 35);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (61, 78,  40, 36);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (58, 21, 38, 38);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (32, 23, 81, 42);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (70, 20, 41, 43);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (99, 42, 96, 43);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (59, 47, 54, 45);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (90, 62, 48, 48);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (36, 75, 22, 50);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (84, 89, 52, 51);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (33, 16, 37, 52);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (60, 92, 3, 53);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (56, 35, 90, 54);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (62, 18, 29, 54);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (6, 99, 75, 55);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (8, 64,  26, 55);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (45, 61, 24, 55);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (49, 20, 76, 56);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (15, 93, 32, 57);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (63, 23, 47, 57);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (52, 99, 51, 59);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (57, 24, 9, 60);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (80, 33, 28, 60);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (89, 88, 94, 61);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (13, 63, 50, 62);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (17, 2, 11, 63);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (14, 41, 16, 65);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (7, 25, 47, 67);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (19, 50, 62, 67);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (76, 99, 22, 68);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (81, 50, 48, 68);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (40, 54, 41, 70);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (96, 82, 22, 70);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (24, 70, 6, 71);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (30, 54, 90, 71);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (4, 85, 40, 72);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (12, 18, 7, 72);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (78, 7, 25, 76);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (42, 36, 81, 78);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (50, 36, 34, 78);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (5, 55, 2, 79);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (27, 62, 51, 79);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (41, 39, 21, 79);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (97, 18, 31, 79);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (20, 17, 38, 80);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (64, 57, 11, 80);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (1, 91, 21, 81);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (2, 53, 95, 81);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (77, 63, 56, 82);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (16, 7, 12, 83);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (26, 36, 22, 85);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (83, 86, 16, 85);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (86, 3, 69, 85);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (29, 76, 46, 87);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (82, 74, 94, 87);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (53, 62, 14, 88);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (69, 70, 28, 88);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (73, 28, 44, 88);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (92, 1, 43, 88);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (37, 36, 36, 89);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (47, 37, 2, 91);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (91, 3, 32, 92);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (93, 90, 81, 92);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (68, 16, 50, 93);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (35, 43,81, 94);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (54, 58, 91, 94);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (55, 36, 84, 94);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (85, 87,33, 94);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (25, 19, 34, 96);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (48, 58, 60, 97);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (95, 20, 25, 97);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (67, 7,  98);
+INSERT INTO `Favourites` (`fav_id`, `fav_group_id`, `id_movie`, `Users_id`) VALUES (39, 77, 99);
+DROP TABLE IF EXISTS `Favourites_has_statuses`;
+
+ CREATE TABLE `Favourites_has_statuses`
+ (
+	fav_id int not null,
+    status_id int not null,
+    PRIMARY KEY (`fav_id`, `status_id`),
+    FOREIGN KEY (`fav_id`) REFERENCES `Favourites`(`fav_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (`status_id`) REFERENCES `Statuses`(`status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+ );
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (1, 1);
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (1, 2);
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (1, 3);
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (3, 1);
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (4, 2);
+ INSERT INTO `Favourites_has_statuses` (`fav_id`, `status_id`) VALUES (2, 3);
